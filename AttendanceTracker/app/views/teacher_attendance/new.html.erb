@@ -3,17 +3,15 @@
 
 <%= form_for :teacher_attendance do |f| %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <h2><center>Show this <b>code</b> to the students to enroll in your course:</center></h2>
   </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    *This is where we insert our code generator*
   </p>
   
  
   <p>
-    <%= f.submit%>
+    <%= f.submit "Finish"%>
   </p>
 <% end %>
