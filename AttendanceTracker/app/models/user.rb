@@ -1,4 +1,4 @@
-class User
+class User < ApplicationRecord
   attr_accessor :firstName, :lastName, :studentid
 
   def initialize(attributes = {})
@@ -11,4 +11,5 @@ class User
   def formatted_email
     "#{@studentid}@uncc.edu"
   end
+
 end
