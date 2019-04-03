@@ -1,14 +1,29 @@
 <h1>New Student Enrollment</h1>
 
-
 <%= form_for :teacher_attendance do |f| %>
   <p>
     <h2><center>Show this <b>code</b> to the students to enroll in your course:</center></h2>
   </p>
  
-  <p>
-    *This is where we insert our code generator*
-  </p>
+<button type="Button" onclick="randomGenerator()">Random Code</button>
+<p id="generator"></p>
+
+
+<script>
+function randomGenerator() {
+  
+  var x = document.getElementById("generator")
+    
+  var captcha = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  for (var i = 0; i < 10; i++)
+    captcha += possible.charAt(Math.floor(Math.random() * possible.length));
+
+   x.innerHTML = captcha;
+  
+}
+</script>
   
  
   <p>
