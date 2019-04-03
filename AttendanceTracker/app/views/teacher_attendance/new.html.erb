@@ -27,7 +27,6 @@ function randomGenerator() {
   
  
   <p>
-    <button><%= link_to 'Finish', welcome_index_path %></button>
-    
+    <%= link_to '<button type="button">Finish</button>'.html_safe, welcome_index_path %>
   </p>
 <% end %>
