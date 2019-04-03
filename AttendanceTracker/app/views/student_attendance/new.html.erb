@@ -1,19 +1,23 @@
-<%= stylesheet_link_tag "studentStyle.css" %>
-
 <h1>New Course Enrollment</h1>
 
 <%= form_for :student_attendnace do |f| %>
   <p>
+    <center>
     <%= f.label :CourseName, 'Course Name' %><br>
     <%= f.text_field :CourseName %>
+    </center>
   </p>
  
   <p>
+    <center>
     <%= f.label :ClassCode, 'Class Code' %><br>
     <%= f.text_area :ClassCode %>
+    </center>
   </p>
  
   <p>
+    <center>
     <%= f.submit "Enroll" %>
+    </center>
   </p>
 <% end %>
