@@ -13,20 +13,41 @@
  *= require_tree .
  *= require_self
  */
+header {
+  position: relative;
+  top: -17px;
+}
+
+header h1 {
+  color: #3498db;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #f2f2f2;
+  width: 100%;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+footer {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  bottom: 15px;
+  width: 98%;
+  padding-top: 2px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  background: #f2f2f2;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
 body {
-    background-color: lightblue;
-}
-
-p {
-    color: black;
-}
-
-h1 {
-    color: red;
-    text-align: center;
-}
-
-h2 {
-    color: black;
+  background: -webkit-linear-gradient(right, #3498db, #8DC26F);
+  background: -moz-linear-gradient(right, #3498db, #8DC26F);
+  background: -o-linear-gradient(right, #3498db, #8DC26F);
+  background: linear-gradient(to left, #3498db, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

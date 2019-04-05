@@ -1,4 +1,6 @@
-<h1>New Student Enrollment</h1>
+<header>
+  <h1>New Student Enrollment</h1>
+</header>
 
 <%= form_for :teacher_attendance do |f| %>
   <p>
@@ -15,7 +17,7 @@ function randomGenerator() {
   var x = document.getElementById("generator")
     
   var captcha = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var possible = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789";
 
   for (var i = 0; i < 10; i++)
     captcha += possible.charAt(Math.floor(Math.random() * possible.length));

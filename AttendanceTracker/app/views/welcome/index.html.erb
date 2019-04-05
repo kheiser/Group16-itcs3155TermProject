@@ -1,6 +1,30 @@
-<h1>Attendance Tracker</h1>
-<p>The log in page would be here</p>
+<header>
+    <h1>Attendance Track</h1>
+</header>
 
-<p>Test Buttons for Student/Teacher view</p>
-<%= link_to'Teacher View', new_teacher_attendance_path %>
-<%= link_to'Student View', new_student_attendance_path %>
+<div class="login-text">
+    <h2>Attendance Tracking Made Easy!</h2>
+    <p>Sign in Now to Experience True Attendance Tracking</p>
+</div>
+
+<div class="login-page">
+    <div class="form">
+        <p class="login-top-text">LET'S GET STARTED</p>
+        <form class="login-form">
+            <%= form_for :user do |f| %>
+            <%= f.text_field :email, placeholder: "example@email.com" %>
+            <%= f.text_field :password, placeholder: "password" %>
+            <div class="login-button">
+                <%= f.submit "Submit" %>
+            </div>
+            <% end %>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>Test Buttons for Student/Teacher view</p>
+    <%= link_to'Teacher View', new_teacher_attendance_path %>
+    <%= link_to'Student View', new_student_attendance_path %>
+</footer>
