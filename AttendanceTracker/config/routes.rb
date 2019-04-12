@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :student_attendance
   resources :teacher_attendance
+  resources :course
   
   
   
