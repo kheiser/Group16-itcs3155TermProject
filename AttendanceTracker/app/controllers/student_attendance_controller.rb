@@ -1,5 +1,6 @@
 class StudentAttendanceController < ApplicationController
     def new
+    
     end 
     
     def create

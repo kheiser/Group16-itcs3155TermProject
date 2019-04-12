@@ -1,7 +1,10 @@
 class CourseController < ApplicationController
     def new
-        @course = Course.new
-       
+        @course = Course.new(course_params)
+        
+        if @course.save
+            #do something
+        end
     end
     
     def create
@@ -25,7 +28,7 @@ class CourseController < ApplicationController
     
     
     def course_params
-       params.require(:course).permit(:name, :courseID, :registrationID) 
+       params.require(:course).permit(:name, :teacher, :courseID, :registrationID) 
     end
     
 end
