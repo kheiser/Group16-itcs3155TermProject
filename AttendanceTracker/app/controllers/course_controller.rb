@@ -8,6 +8,7 @@ class CourseController < ApplicationController
     end
     
     def create
+        render plain: params[:course].inspect
     end 
     
     def delete
@@ -28,7 +29,7 @@ class CourseController < ApplicationController
     
     
     def course_params
-       params.require(:course).permit(:name, :teacher, :courseID, :registrationID) 
+       params.permit(:name, :teacher, :courseID, :registrationID) 
     end
     
 end

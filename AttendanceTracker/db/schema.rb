@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_04_12_225945) do
 
+  create_table "courses", force: :cascade do |t|
+    t.text "name"
+    t.text "teacher"
+    t.text "courseID"
+    t.text "registrationID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
