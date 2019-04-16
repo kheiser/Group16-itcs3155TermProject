@@ -3,32 +3,37 @@
 </header>
 
 <%= form_for :teacher_attendance do |f| %>
-  <p>
+  <p class="coursetext">
     <h2><center>Show this <b>code</b> to the students to enroll in your course:</center></h2>
   </p>
  
-<button type="Button" onclick="randomGenerator()">Random Code</button>
-<p id="generator"></p>
-
-
 <script>
 function randomGenerator() {
-  
   var x = document.getElementById("generator")
-    
   var captcha = "";
   var possible = "ABCDEFGHIJKLMNPQRSTUVWXYZ123456789";
-
   for (var i = 0; i < 10; i++)
     captcha += possible.charAt(Math.floor(Math.random() * possible.length));
-
    x.innerHTML = captcha;
-  
 }
 </script>
-  
- 
-  <p>
-    <%= link_to '<button type="button">Finish</button>'.html_safe, welcome_index_path %>
-  </p>
+
+<p id="generator"></p>
+<button type="Button" onclick="randomGenerator()" class="otherButtons">RANDOM CODE</button>
+
+
 <% end %>
+
+<footer>
+    <p>Test Buttons for Debugging/TAs</p>
+    <%= link_to 'Home Page', root_path%>
+    <%= link_to'Teacher View', new_teacher_attendance_path %>
+    <%= link_to'Student View', new_student_attendance_path %>
+    
+    <% if current_user %>
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>
+    <% else %>
+    <%= link_to 'Sign in' , new_user_session_path %>
+    <%= link_to 'Sign Up', new_user_registration_path%>
+   <% end %>
+</footer>

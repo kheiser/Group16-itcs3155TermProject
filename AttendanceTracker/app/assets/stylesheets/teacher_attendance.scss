@@ -2,39 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#generator {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    
-    font-size: 108px;
-    white-space: nowrap;
-    animation: textAnimate 5s linear infinite alternate;
-    background: linear-gradient( 92deg, #95d7e3, #eb76ff);
-    background: -webkit-linear-gradient( 92deg, #95d7e3, #eb76ff);
-    background-size: 600vw 600vw;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &::after {
-        position: absolute;
-        content: attr(data-text);
-        left: 0;
-        right: 0;
-        background: none;
-        box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.50);
-        z-index: -1;
-    }
+h2 {
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
-@keyframes textAnimate {
-  from {
-    filter: hue-rotate(0deg);
-    background-position-x: 0%;
-    
-  }
-  to {
-    filter: hue-rotate(360deg);
-    background-position-x: 600vw;
-    
-  }
+#generator {
+  position: relative;
+  text-align: center;
+  top: 50%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 108px;
+  white-space: nowrap;
 }
