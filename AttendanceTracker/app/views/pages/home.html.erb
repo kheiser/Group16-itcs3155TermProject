@@ -1,28 +1,14 @@
-<header>
-    <h1>Attendance Track</h1>
-</header>
-
-<div class="login-text">
-    <h2>Attendance Tracking Made Easy!</h2>
-    <p>Sign in Now to Experience True Attendance Tracking</p>
-</div>
-
-
-
-<div class="login-page">
-    <div class="form">
-        <p class="login-top-text">LET'S GET STARTED</p>
-        <form class="login-form">
-            <%= form_for :user do |f| %>
-            <%= f.text_field :email, placeholder: "example@email.com" %>
-            <%= f.text_field :password, placeholder: "password" %>
-            <div class="login-button">
-                <%= f.submit "Submit" %>
+<div class="home-screen">
+     <body>
+        <div class="heading">
+            <span class="title">Attendance Tracker</span>
+            <span class="motto">Attendance Tracking Made Easy!</span>
+            <div class="buttons">
+                <%= link_to "LOGIN".html_safe, new_user_session_path, :class=>"login" %>
+                <%= link_to "REGISTER" .html_safe, new_user_registration_path, :class=>"register"%>
             </div>
-            <% end %>
-            
-        </form>
-    </div>
+        </div>
+    </body>
 </div>
 
 <footer>
