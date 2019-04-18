@@ -1,35 +1,50 @@
 class CourseController < ApplicationController
     def new
-        @course = Course.new(course_params)
-        
-        if @course.save
-            #do something
-        end
+        @course = Course.new
     end
     
     def create
-        render plain: params[:course].inspect
+        @course = Course.new(course_params)
+        
+        if @course.save
+            redirect_to @course
+        else
+            render 'new'
+        end
     end 
     
-    def delete
-       Course.find(params[:name]).destroy 
+    def destroy
+       @course = Course.find(params[:id])
+       @course.destroy
+       
+       redirect_to course_index_path
     end
     
-    def list
+    def index
         @course = Course.all
     end
     
     def show
-        @course = Course.find(params[:name])
+        @course = Course.find(params[:id])
     end 
     
     def edit
-        @course = Course.find(params[:name])
+        @course = Course.find(params[:id])
     end 
     
-    
+    def update
+        @course = Course.find(params[:id])
+        
+        if @course.update(course_params)
+            redirect_to @course
+        else
+            render 'edit'
+        end
+    end
+end
+
+private
     def course_params
-       params.permit(:name, :teacher, :courseID, :registrationID) 
+       params.require(:course).permit(:name, :teacher, :courseID, :registrationID) 
     end
     
-end

@@ -1,4 +1,6 @@
 <header><h1>Student Home</h1></header>
-
-
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete%>
+<center>
+<%= link_to '<button type="button">Add Course</button>'.html_safe, new_course_path %>
+<%= link_to '<button type="button">View Courses</button>'.html_safe, course_index_path %>
+<%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete%>
+</center>
