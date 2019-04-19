@@ -1,6 +1,11 @@
 <p>
     <strong>Course Name:</strong>
     <%= @course.name %>
+    
+    <p>
+        <strong>Absences:</strong>
+    <%= @course.attendance%>
+    </p>
 </p>
 
  <%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
