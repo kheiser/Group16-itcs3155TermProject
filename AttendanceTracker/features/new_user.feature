@@ -12,5 +12,5 @@ Given I am not authenticated
     And I fill in "user_email" with "newstudent@email.com"
     And I fill in "user_password" with "123456
     And I fill in "user_password_confirmation" with "123456"
-    And I press "Sign up"
+    Then I should press "Sign up"
     Then I should see "Student Home" page

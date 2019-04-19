@@ -5,7 +5,7 @@ class CourseController < ApplicationController
     
     def create
         @course = Course.new(course_params)
-        @attendance = Attendance.new()
+        #@attendance = Attendance.new()
         
         if @course.save
             redirect_to @course
@@ -23,7 +23,7 @@ class CourseController < ApplicationController
     
     def index
         @course = Course.all
-        @attendance = Attendance.all
+        #@attendance = Attendance.all
     end
     
     def show
