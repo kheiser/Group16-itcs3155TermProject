@@ -1,4 +1,8 @@
 class Course < ApplicationRecord
+    has_many :attendance
+    attr_accessor :name, :attendance
     validates :name, presence: true, length: { minimum: 5 }
-    has_one :attendance
+    
+    
+    
 end

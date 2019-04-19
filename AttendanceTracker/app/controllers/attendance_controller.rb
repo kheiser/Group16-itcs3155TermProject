@@ -1,9 +1,9 @@
 class AttendanceController < ApplicationController
     
     def create
-        @course = Course.find(params[:name])
+        @course = Course.find(params[:course_id])
         @attendance = @course.attendance.create(attendance_params)
-        redirect_to course_path(@course)
+        #redirect_to course_path(@course)
     end
     
     def destroy
@@ -12,7 +12,7 @@ class AttendanceController < ApplicationController
     end
     
     def index
-    @attendance = Attendance.all
+         @attendance = Attendance.all
     end
     
     private

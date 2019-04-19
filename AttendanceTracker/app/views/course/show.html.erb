@@ -3,9 +3,34 @@
     <%= @course.name %>
     
     <p>
+    <h2>Attendance</h2>
+   
+    <% @course.attendance.each do |attendance| %>
+      <p>
+        <strong>Student</strong>
+        <%= attendance.student %>
+      </p>
+ 
+      <p>
         <strong>Absences:</strong>
-    <%= @course.attendance%>
-    </p>
+        <%= attendance.absences %>
+      </p>
+    <% end %>
+    
+    <h2>Add an attendance record:</h2>
+<%= form_for([@course, @course.attendance.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :absences %><br>
+    <%= f.tnumber_field :absences %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
 </p>
+    <%end%>
 
  <%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
