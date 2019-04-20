@@ -232,7 +232,6 @@ footer {
 }
 
 .studentView {
-  
   border: 3px solid white;
   padding: 15px;
   font-family: "Roboto", sans-serif;
@@ -241,3 +240,10 @@ footer {
   margin-left: 45%;
 }
 
+table {
+  color: white;
+}
+
+p {
+  color: white;
+}

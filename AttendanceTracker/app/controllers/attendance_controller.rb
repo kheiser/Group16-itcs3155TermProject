@@ -1,5 +1,4 @@
 class AttendanceController < ApplicationController
-    
     def create
         @course = Course.find(params[:course_id])
         @attendance = @course.attendance.create(attendance_params)

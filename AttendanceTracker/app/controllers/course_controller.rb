@@ -5,15 +5,14 @@ class CourseController < ApplicationController
     
     def create
         @course = Course.new(course_params)
-        #@attendance = Attendance.new()
-        
         if @course.save
             redirect_to @course
         else
             render 'new'
         end
-    end 
-    
+        
+    end
+
     def destroy
        @course = Course.find(params[:id])
        @course.destroy
@@ -27,7 +26,15 @@ class CourseController < ApplicationController
     end
     
     def show
+        
         @course = Course.find(params[:id])
+        
+        if (@course.getAttendance == nil)
+            @course.setAttendance
+        else
+            @course.getAttendance
+        end
+        
     end 
     
     def edit
@@ -36,7 +43,6 @@ class CourseController < ApplicationController
     
     def update
         @course = Course.find(params[:id])
-        
         if @course.update(course_params)
             redirect_to @course
         else
@@ -47,6 +53,6 @@ end
 
 private
     def course_params
-       params.require(:course).permit(:name, :teacher, :courseID, :registrationID) 
+       params.require(:course).permit(:name, :teacher, :courseID, :registrationID, :attendance) 
     end
     

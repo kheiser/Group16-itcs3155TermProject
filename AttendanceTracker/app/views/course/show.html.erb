@@ -1,6 +1,15 @@
+<header>
+    <h1><%= @course.name %></h1>
+</header>
 <p>
     <strong>Course Name:</strong>
     <%= @course.name %>
 </p>
 
- <%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
+<p>
+    <strong>Attendance</strong>
+    <%= @course.read_attribute(:attendance) %>
+    <%= button_to 'Update Attendance', :method => @course.updateAttendance %>
+</p>
+
+<%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>

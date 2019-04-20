@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_04_18_232435) do
     t.text "name"
     t.text "teacher"
     t.text "courseID"
+    t.integer "attendance"
     t.text "registrationID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
