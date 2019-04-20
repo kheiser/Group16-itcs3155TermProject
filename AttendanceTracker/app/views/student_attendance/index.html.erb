@@ -1,6 +1,8 @@
 <header><h1>Student Home</h1></header>
 <center>
-<%= link_to '<button type="button">Add Course</button>'.html_safe, new_course_path %>
-<%= link_to '<button type="button">View Courses</button>'.html_safe, course_index_path %>
-<%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete%>
+     <div class="buttons">
+        <%= link_to 'View Courses'.html_safe, course_index_path , :class=>"student"%>
+        <%= link_to 'Add Course'.html_safe, new_course_path , :class=>"student"%>
+        <%= link_to 'Sign Out'.html_safe, destroy_user_session_path, method: :delete, :class=>"student"%>
+     </div>
 </center>

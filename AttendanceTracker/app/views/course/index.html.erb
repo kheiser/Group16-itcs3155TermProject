@@ -2,20 +2,24 @@
   <h1>Listing Courses</h1>
 </header>
 
-<%= link_to '<button type="button">Student Home Page</button>'.html_safe, student_attendance_index_path %><br>
-<%= link_to '<button type="button">Add Course</button>'.html_safe, new_course_path %>
+<center>
+     <div class="buttons">
+        <%= link_to 'Student Home Page'.html_safe, student_attendance_index_path, :class=>"student" %>
+        <%= link_to 'Add Course'.html_safe, new_course_path, :class=>"student" %>
+     </div>
+</center>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th colspan="4">Courses</th>
   </tr>
  
   <% @course.each do |course| %>
     <tr>
-      <td><%= course.name %></td>
+      <td class="courseName"><%= course.name %></td>
       <td><%= link_to 'Show', course_path(course) %></td>
       <td><%= link_to 'Edit', edit_course_path(course) %></td>
-      <td><%= link_to 'Delete',
+      <td><%= link_to 'Withdraw',
                               course_path(course),
                               method: :delete,
                               data: { confirm: 'Are you sure you want to delete this course?' } %></td>

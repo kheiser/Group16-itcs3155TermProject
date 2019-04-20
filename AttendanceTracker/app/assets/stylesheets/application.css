@@ -102,6 +102,22 @@ body {
   border-radius: 5px;
 }
 
+.student {
+  text-decoration: none;
+  padding-top: 25px;
+  margin: 50px auto;
+  margin-right: 10px;
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  border: 3px solid white;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
 .register {
   text-decoration: none;
   padding-top: 25px;
@@ -129,6 +145,14 @@ body {
 .login:hover {
   background-color: rgba(255, 255, 255, 1);
   color: #222;
+  cursor: pointer;
+  transition: background-color 1000ms, color 1000ms;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.student:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: #3498db;
   cursor: pointer;
   transition: background-color 1000ms, color 1000ms;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -241,9 +265,36 @@ footer {
 }
 
 table {
-  color: white;
+  font-family: "Roboto", sans-serif;
+  margin-left:auto; 
+  margin-right:auto;
+  border-collapse: collapse;
+  width: 90%;
 }
 
-p {
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+.courseName {
+  text-align: left;
+}
+td {
+  text-align: right;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd){
+  background-color: #cccccc;
+}
+
+th {
+  colspan: 3;
+  background-color: #3498db;
   color: white;
 }
