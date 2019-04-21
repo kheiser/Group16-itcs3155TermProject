@@ -34,6 +34,16 @@ class CourseController < ApplicationController
         else
             @course.getAttendance
         end
+        if (@course.getTardies == nil)
+            @course.setTardies
+        else
+            @course.getTardies
+        end
+        if (@course.getAbsences == nil)
+            @course.setAbsences
+        else
+            @course.getAbsences
+        end
         
     end 
     
@@ -53,6 +63,6 @@ end
 
 private
     def course_params
-       params.require(:course).permit(:name, :teacher, :courseID, :registrationID, :attendance) 
+       params.require(:course).permit(:name, :teacher, :courseID, :registrationID, :attendance, :tardies, :absences) 
     end
     

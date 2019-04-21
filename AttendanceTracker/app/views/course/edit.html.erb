@@ -1,7 +1,8 @@
 <header>
   <h1>Editing Course</h1>
 </header>
- 
+
+
 <%= form_for :course, url: course_path(@course), method: :patch do |f| %>
  
   <% if @course.errors.any? %>
@@ -27,8 +28,10 @@
  
  <p>
     <center>
-    <%= f.submit "Save Changes" %>
+      <%= f.submit "Save Changes" %>
+      <div class="buttons">
+        <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=>"student" %>
+      </div>
     </center>
-    <%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
   </p>
 <% end %>

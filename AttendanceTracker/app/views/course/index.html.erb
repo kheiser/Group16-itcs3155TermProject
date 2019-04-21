@@ -11,15 +11,18 @@
 
 <table>
   <tr>
-    <th colspan="4">Courses</th>
+    <th colspan="1">Courses</th>
+    <th colspan="1" class="attendance">Presents | Tardies | Absences</th>
+    <th colspan="3"></th>
   </tr>
  
   <% @course.each do |course| %>
     <tr>
       <td class="courseName"><%= course.name %></td>
-      <td><%= link_to 'Show', course_path(course) %></td>
-      <td><%= link_to 'Edit', edit_course_path(course) %></td>
-      <td><%= link_to 'Withdraw',
+      <td class="attendance"><%= course.getAttendance %> | <%= course.getTardies %> | <%= course.getAbsences %></td>
+      <td class="emptyHead"><%= link_to 'Show', course_path(course) %></td>
+      <td class="emptyHead"><%= link_to 'Edit', edit_course_path(course) %></td>
+      <td class="emptyHead"><%= link_to 'Withdraw',
                               course_path(course),
                               method: :delete,
                               data: { confirm: 'Are you sure you want to delete this course?' } %></td>

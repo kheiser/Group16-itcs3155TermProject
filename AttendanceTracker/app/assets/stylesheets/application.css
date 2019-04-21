@@ -298,3 +298,11 @@ th {
   background-color: #3498db;
   color: white;
 }
+
+.attendance {
+  text-align: center;
+}
+
+.emptyHead {
+  text-align: center;
+}
