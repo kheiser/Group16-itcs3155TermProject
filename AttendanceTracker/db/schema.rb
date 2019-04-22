@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_04_18_232435) do
 
+  create_table "attendances", force: :cascade do |t|
+    t.string "student"
+    t.integer "absences"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_attendances_on_course_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.text "name"
     t.text "teacher"

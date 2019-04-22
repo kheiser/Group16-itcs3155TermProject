@@ -10,6 +10,9 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :teacher
       t.text :courseID
+      t.integer :attendance
+      t.integer :tardies
+      t.integer :absences
       t.text :registrationID
       
 
