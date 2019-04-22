@@ -81,15 +81,14 @@ class CourseController < ApplicationController
             @course.getAbsences
         end
         
-        if (:present.present?)
+        if (params[:name] == "present")
             @course.updateAttendance
-        
-        elsif (:absent.present?)
-            @course.updateAbsences
-        
-        elsif (:tardy.present?)
+        elsif (params[:name] == "tardy")
             @course.updateTardies
+        elsif (params[:name] == "absent")
+            @course.updateAbsences
         end
+        
             
     end 
     
