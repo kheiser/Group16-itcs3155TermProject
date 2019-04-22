@@ -11,6 +11,22 @@ class CourseController < ApplicationController
             render 'new'
         end
         
+        if (@course.getAttendance == nil)
+            @course.setAttendance
+        else
+            @course.getAttendance
+        end
+        if (@course.getTardies == nil)
+            @course.setTardies
+        else
+            @course.getTardies
+        end
+        if (@course.getAbsences == nil)
+            @course.setAbsences
+        else
+            @course.getAbsences
+        end
+        
     end
 
     def destroy
@@ -23,18 +39,24 @@ class CourseController < ApplicationController
     def index
         @course = Course.all
         #@attendance = Attendance.all
+        
+        @course.each do |course|
+        if (course.getAttendance == nil)
+            course.setAttendance
+        else
+            course.getAttendance
+        end
+        if (course.getTardies == nil)
+            course.setTardies
+        else
+            course.getTardies
+        end
+        if (course.getAbsences == nil)
+            course.setAbsences
+        else
+            course.getAbsences
+        end
     end
-    
-    def updatedAttendances
-       @course = Course.find(params[:id])
-    end
-    
-    def updatedTardies
-       @course = Course.find(params[:id])
-    end
-    
-    def updatedAbsences
-       @course = Course.find(params[:id])
     end
     
     def show

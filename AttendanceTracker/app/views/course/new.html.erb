@@ -17,18 +17,19 @@
       </ul>
     </div>
   <% end %>
-
-  <p>
-    <center>
-    <%= f.label :name, 'Course Name' %><br>
-    <%= f.text_field :name %>
-    </center>
-  </p>
+  
+ <p class="showClass">
+    <strong>Course Name: </strong> <br>
+    <%= f.text_field :name %> <br>
+ </p>
  
   <p>
+    <br>
     <center>
     <%= f.submit "Enroll" %>
     </center>
-    <%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
+   <div class="buttons">
+        <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=>"student" %>
+      </div>
   </p>
 <% end %>

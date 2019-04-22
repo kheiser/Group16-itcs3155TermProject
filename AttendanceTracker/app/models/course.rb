@@ -1,8 +1,8 @@
 class Course < ApplicationRecord
     has_many :attendance
-    
-    $bool = false
-    
+    has_many :tardies
+    has_many :absences
+
     def setAttendance
         @attendance = 0
         write_attribute(:attendance, @attendance)

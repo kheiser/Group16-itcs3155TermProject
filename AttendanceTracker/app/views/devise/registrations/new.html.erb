@@ -23,14 +23,6 @@
 			<%= f.password_field :password_confirmation, placeholder: "re-enter password" %>
 		</div>
 
-		<div class="radio">
-			<%= f.label "Are you a teacher or a student?" %><br />
-			<%= f.label :teacher, "Teacher", :value => "true"  %>
-			<%= f.radio_button :teacher, true %>
-			<%= f.label :teacher, "Student", :value => "false" %>
-			<%= f.radio_button :teacher, false, :checked => true  %>
-		</div>
-
 		<div class="actions">
 			<%= f.submit "Sign up" %>
 		</div>

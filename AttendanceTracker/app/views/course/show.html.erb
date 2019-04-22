@@ -18,9 +18,9 @@
 <center>
 <div class="attendanceBtn"> 
 <div class="btn-group">
-  <%= link_to '<button>Update Presents</button>'.html_safe, course_updatedAttendances_path%>
-  <%= link_to '<button>Update Tardies </button>'.html_safe, course_updatedTardies_path%>
-  <%= link_to '<button>Update Absences</button>'.html_safe, course_updatedAbsences_path%>
+  <%= link_to '<button>Update Present</button>' .html_safe, edit_course_path(@course) %></td>
+  <%= link_to '<button>Update Tardies</button>' .html_safe, edit_course_path(@course) %></td>
+  <%= link_to '<button>Update Absences</button>'.html_safe, edit_course_path(@course) %></td>
 </div>
 </div>
 </center>
