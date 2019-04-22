@@ -8,10 +8,12 @@ Rails.application.routes.draw do
  
   resources :course do
     resources :attendance
+    resources :tardies
+    resources :absences
   end
   
   root 'welcome#index'
-  post "course/:id/"     => "course#show"
+  
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -18,9 +18,9 @@
 <center>
 <div class="attendanceBtn"> 
 <div class="btn-group">
-  <%= link_to '<button>Update Present</button>' .html_safe, edit_course_path(@course) %></td>
-  <%= link_to '<button>Update Tardies</button>' .html_safe, edit_course_path(@course) %></td>
-  <%= link_to '<button>Update Absences</button>'.html_safe, edit_course_path(@course) %></td>
+  <%= link_to '<button>Update Present</button>' .html_safe,  {:action => "show", :name => "present" } %></td>
+  <%= link_to '<button>Update Tardies</button>' .html_safe,  {:action => "show", :name => "tardy"   } %></td>
+  <%= link_to '<button>Update Absences</button>'.html_safe,  {:action => "show", :name => "absent" }  %></td>
 </div>
 </div>
 </center>

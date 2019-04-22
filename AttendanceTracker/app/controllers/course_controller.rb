@@ -2,9 +2,10 @@ class CourseController < ApplicationController
     def new
         @course = Course.new
     end
-    
+
     def create
         @course = Course.new(course_params)
+        
         if @course.save
             redirect_to @course
         else
@@ -26,6 +27,8 @@ class CourseController < ApplicationController
         else
             @course.getAbsences
         end
+        
+    
         
     end
 
@@ -62,7 +65,6 @@ class CourseController < ApplicationController
     def show
         
         @course = Course.find(params[:id])
-        
         if (@course.getAttendance == nil)
             @course.setAttendance
         else
@@ -79,6 +81,16 @@ class CourseController < ApplicationController
             @course.getAbsences
         end
         
+        if (:present.present?)
+            @course.updateAttendance
+        
+        elsif (:absent.present?)
+            @course.updateAbsences
+        
+        elsif (:tardy.present?)
+            @course.updateTardies
+        end
+            
     end 
     
     def edit

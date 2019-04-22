@@ -1,36 +1,38 @@
 <header>
-  <h1>Editing Course: <%= @course.name %></h1>
+	<h1><%= @course.name %></h1>
 </header>
 
+<div class="login-page">
+	<div class="form">
+		<p class="login-top-text">Edit Course</p>
+		<%= form_for :course, url: course_path(@course), method: :patch do |f| %>
 
-<%= form_for :course, url: course_path(@course), method: :patch do |f| %>
- 
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@course.errors.count, "error") %> prohibited
-        this course from being saved:
-      </h2>
-      <ul>
-        <% @course.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
- <p class="showClass">
-    <strong>Course Name: </strong> <br>
-    <%= f.text_field :name %> <br>
- </p>
- 
- <p>
-    <center>
-      <br>
-      <%= f.submit "Save Changes" %>
-      <div class="buttons">
-        <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=>"student" %>
-      </div>
-    </center>
-  </p>
-<% end %>
+		<% if @course.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@course.errors.count, "error") %> prohibited
+				this course from being saved:
+			</h2>
+			<ul>
+				<% @course.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+
+		<p class="showClass">
+			<strong>Course Name: </strong> <br> <br>
+			<%= f.text_field :name %> <br>
+			<strong>Total Present: </strong>
+		</p>
+
+		<p>
+			<center>
+				<br>
+				<%= f.submit "Save Changes" %>
+			</center>
+		</p>
+		<% end %>
+	</div>
+</div>
