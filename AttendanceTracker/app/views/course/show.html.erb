@@ -1,15 +1,32 @@
 <header>
     <h1><%= @course.name %></h1>
 </header>
-<p>
-    <strong>Course Name:</strong>
+
+<p class="showClass">
+    <strong>Course: </strong>
     <%= @course.name %>
 </p>
 
-<p>
-    <strong>Attendance</strong>
-    <%= @course.read_attribute(:attendance) %>
-    <%= button_to 'Update Attendance', :method => @course.updateAttendance %>
-</p>
+<div class="listCont">
+<ul class="rectangle-list">
+    <li><a href=""><%= @course.getAttendance %> days <b>Present</b> </a></li>
+    <li><a href=""><%= @course.getTardies    %> days <b>Tardy</b>   </a></li>
+    <li><a href=""><%= @course.getAbsences   %> days <b>Absent</b>  </a></li>                       
+</ul>
+</div>
 
-<%= link_to '<button type="button">Return to Student View</button>'.html_safe, student_attendance_index_path %>
+<center>
+<div class="attendanceBtn"> 
+<div class="btn-group">
+  <%= link_to '<button>Update Presents</button>'.html_safe, course_updatedAttendances_path%>
+  <%= link_to '<button>Update Tardies </button>'.html_safe, course_updatedTardies_path%>
+  <%= link_to '<button>Update Absences</button>'.html_safe, course_updatedAbsences_path%>
+</div>
+</div>
+</center>
+
+<center>
+    <div class="button">
+        <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=> "student" %>
+    </div>
+</center>

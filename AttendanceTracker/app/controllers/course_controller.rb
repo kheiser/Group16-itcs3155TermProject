@@ -25,6 +25,18 @@ class CourseController < ApplicationController
         #@attendance = Attendance.all
     end
     
+    def updatedAttendances
+       @course = Course.find(params[:id])
+    end
+    
+    def updatedTardies
+       @course = Course.find(params[:id])
+    end
+    
+    def updatedAbsences
+       @course = Course.find(params[:id])
+    end
+    
     def show
         
         @course = Course.find(params[:id])

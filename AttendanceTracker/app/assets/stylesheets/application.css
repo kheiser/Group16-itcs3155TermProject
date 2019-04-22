@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
 * {
   margin: 0;
   padding: 0;
@@ -162,7 +162,7 @@ header {
   margin-bottom: 60px;
 }
 
-header h1{
+header h1 {
   color: #3498db;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
@@ -219,7 +219,7 @@ footer {
 
 }
 
-.form input{
+.form input {
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -230,7 +230,7 @@ footer {
   font-size: 14px;
 }
 
- .form input[type="submit"] {
+.form input[type="submit"] {
   text-transform: uppercase;
   outline: 0;
   background: #3498db;
@@ -266,8 +266,8 @@ footer {
 
 table {
   font-family: "Roboto", sans-serif;
-  margin-left:auto; 
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   border-collapse: collapse;
   width: 90%;
 }
@@ -280,16 +280,17 @@ th {
 .courseName {
   text-align: left;
 }
+
 td {
   text-align: right;
   padding: 8px;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tr:nth-child(odd){
+tr:nth-child(odd) {
   background-color: #cccccc;
 }
 
@@ -305,4 +306,75 @@ th {
 
 .emptyHead {
   text-align: center;
+}
+
+.showClass {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  text-align: center;
+  color: white;
+}
+
+.listCont {
+  padding-top: 20px;
+  padding-left: 37%;
+}
+
+ul {
+  width: 40%;
+  font: 15px "Roboto", sans-serif;
+  padding: 0;
+  margin-bottom: 4em;
+  list-style-type: none;
+}
+
+.rectangle-list a {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em .8em;
+  margin: .5em 0 .5em 2.5em;
+  background: #ffffff;
+  color: #000000;
+  cursor: default;
+}
+
+.rectangle-list a:before {
+  cursor: default;
+  content: "•";
+  position: absolute;
+  left: -2.5em;
+  top: 50%;
+  margin-top: -1em;
+  background: #3498db;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.attendanceBtn {
+  margin-left: 34%;
+}
+
+.btn-group button {
+  font: 15px "Roboto", sans-serif;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 3px solid #3498db;
+  color: #000000;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:hover {
+  background-color: #3498db;
 }

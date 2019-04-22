@@ -1,5 +1,5 @@
 <header>
-  <h1>Editing Course</h1>
+  <h1>Editing Course: <%= @course.name %></h1>
 </header>
 
 
@@ -19,15 +19,14 @@
     </div>
   <% end %>
  
- <p>
-    <center>
-    <%= f.label :name, 'Course Name' %><br>
-    <%= f.text_field :name %>
-    </center>
+ <p class="showClass">
+    <strong>Course Name: </strong> <br>
+    <%= f.text_field :name %> <br>
  </p>
  
  <p>
     <center>
+      <br>
       <%= f.submit "Save Changes" %>
       <div class="buttons">
         <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=>"student" %>
