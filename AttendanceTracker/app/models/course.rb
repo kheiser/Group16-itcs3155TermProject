@@ -18,6 +18,12 @@ class Course < ApplicationRecord
         save
     end
     
+    def decrementAttendance
+        @attendance = read_attribute(:attendance) -1
+        write_attribute(:attendance, @attendance)
+        save
+    end
+    
     def setTardies
         @tardies = 0
         write_attribute(:tardies, @tardies)
@@ -33,6 +39,12 @@ class Course < ApplicationRecord
         save
     end
     
+    def decrementTardies
+        @tardies = read_attribute(:tardies) -1
+        write_attribute(:tardies, @tardies)
+        save
+    end
+    
     def setAbsences
         @absences = 0
         write_attribute(:absences, @absences)
@@ -44,6 +56,12 @@ class Course < ApplicationRecord
     
     def updateAbsences
         @absences = read_attribute(:absences) + 1
+        write_attribute(:absences, @absences)
+        save
+    end
+    
+    def decrementAbsences
+        @absences = read_attribute(:absences) -1
         write_attribute(:absences, @absences)
         save
     end

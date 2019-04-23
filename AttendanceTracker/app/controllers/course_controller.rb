@@ -83,10 +83,16 @@ class CourseController < ApplicationController
         
         if (params[:name] == "present")
             @course.updateAttendance
+        elsif (params[:name] == "not present")
+            @course.decrementAttendance
         elsif (params[:name] == "tardy")
             @course.updateTardies
+        elsif (params[:name] == "not tardy")
+            @course.decrementTardies
         elsif (params[:name] == "absent")
             @course.updateAbsences
+        elsif (params[:name] == "not absent")
+            @course.decrementAbsences
         end
         
             

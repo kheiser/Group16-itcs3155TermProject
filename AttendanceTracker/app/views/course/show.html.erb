@@ -26,6 +26,16 @@
 </center>
 
 <center>
+<div class="attendanceBtn"> 
+<div class="btn-group">
+  <%= link_to '<button>Decrease Present</button>' .html_safe,  {:action => "show", :name => "not present" }%></td>
+  <%= link_to '<button>Decrease Tardies</button>' .html_safe,  {:action => "show", :name  => "not tardy"    }%></td>
+  <%= link_to '<button>Decrease Absences</button>'.html_safe,  {:action => "show", :name  => "not absent"   }%></td>
+</div>
+</div>
+</center>
+
+<center>
     <div class="button">
         <%= link_to 'Return to Student View'.html_safe, student_attendance_index_path, :class=> "student" %>
     </div>
